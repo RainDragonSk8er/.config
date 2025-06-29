@@ -1,0 +1,16 @@
+# Sync_list for Jonathan E. Holme from oneDrive to Laptop
+# Sync targets:
+# * CV & Arbeidssøking
+# * MLIO
+# * Personlige lister of filer
+# * Parts of Roleplaying systems?
+
+# Excludes
+
+# Includes
+
+/CV_og_Arbeidssøking/
+/MLIO/
+/Personlige_lister_og_filer/
+/Roleplaying_Systems/D&D/*
+
