@@ -1,0 +1,24 @@
+[window]
+decorations = "None"
+opacity = 0.8
+startup_mode = "maximized"
+title = "Terminal [Alacritty]"
+
+[font]
+# ~/.local/share/fonts/JetBrainsMono-Regular.ttf
+normal = {family = "JetBrainsMono", style="Regular"}
+# Bold, italic ++ are set based on normal
+size = 10
+
+[terminal]
+shell = {program = "/usr/bin/tmux", args = ["new", "-AD" ,"-s", "main"]} # , "neofetch"
+
+[colors]
+cursor = {text = "CellBackground", cursor = "#ffa600"}
+
+[colors.primary]
+foreground = "#bc5090"
+dim_foreground = "#58508d"
+bright_foreground = "#ff6361"
+background = "#00202e"
+
