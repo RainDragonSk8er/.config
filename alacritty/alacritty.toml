@@ -6,7 +6,7 @@ title = "Terminal [Alacritty]"
 
 [font]
 # ~/.local/share/fonts/JetBrainsMono-Regular.ttf
-normal = {family = "JetBrainsMono", style="Regular"}
+normal = {family = "JetBrainsMonoNerdFont", style="Regular"}
 # Bold, italic ++ are set based on normal
 size = 10
 

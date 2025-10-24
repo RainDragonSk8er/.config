@@ -6,6 +6,9 @@ vim.g.maplocalleader = " "
 vim.o.number = true
 vim.o.relativenumber = true
 
+-- fix tab display length
+vim.o.tabstop = 4 
+
 -- enable mouse?
 vim.o.mouse = "a"
 vim.o.so = 10

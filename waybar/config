@@ -1,0 +1,140 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the top of your screen
+    "height": 24, // Waybar height
+    "spacing": 6,
+    // Choose the order of the modules
+    "modules-left": [
+	"sway/workspaces",
+	"custom/spotify"
+    ],
+    "modules-center": [
+	"sway/window",
+	"clock#time"
+    ],
+    "modules-right": [
+	"backlight",
+	"pulseaudio",
+	"network",
+	"cpu",
+	"memory",
+	"battery",
+	"tray",
+	"clock#date"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format-window-separator": " | ",
+	"format": "{name}: {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+	    "7": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+	"persistent-workspaces": {
+	    "1": [],
+	    "2": [],
+	    "3": [],
+	    "4": [],
+        },
+    },
+    "sway/window": {
+	"format": "{title}",
+	"max-length": 50,
+	"rewrite": {
+		"(.*) Firefox": "🌎 Firefox",
+		"Terminal (.*)": "  $1"
+    	}
+    },
+    "backlight": {
+	"device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 15
+    },
+    "clock#time": {	
+        "format": "{:%H:%M (%Z)}",
+        "tooltip-format": "{tz_list}",
+        "timezones": [
+            "Europe/Oslo",
+	    "Europe/Stockholm",
+	    "Europe/Helsinki",
+            "Europe/Amsterdam",
+            "Europe/Athens",
+            "Asia/Tokyo"
+        ]
+    },
+    "clock#date": {
+        "format": "{:%Y-%m-%d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                 "months":     "<span color='#ffead3'><b>{}</b></span>",
+                 "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                 "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                 "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                 "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+             }
+        },
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": "|  {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "bash $HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    }
+}
