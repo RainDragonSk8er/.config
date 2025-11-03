@@ -10,8 +10,9 @@ normal = {family = "JetBrainsMono", style="Regular"}
 # Bold, italic ++ are set based on normal
 size = 10
 
-[terminal]
-shell = {program = "/usr/bin/tmux", args = ["new", "-AD" ,"-s", "main"]} # , "neofetch"
+[shell]
+program = "/usr/bin/tmux"
+args = ["new", "-AD" ,"-s", "main"] # , "neofetch"
 
 [colors]
 cursor = {text = "CellBackground", cursor = "#ffa600"}

@@ -33,7 +33,7 @@ input * {
 	xkb_layout "no, us"
 #	xkb_variant "qwerty"
 	xkb_options "grp:win_space_toggle"
-	xkb_model "asus_laptop"
+	xkb_model "winkey"
 }
 
 input type:touchpad {
