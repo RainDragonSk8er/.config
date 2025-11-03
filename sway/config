@@ -58,8 +58,6 @@ assign [app_id="Alacritty"] "1"
 assign [app_id="firefox"] "2"
 assign [app_id="thunderbird"] "7"
 assign [class="obsidian"] "4"
-assign [class="Signal"] "5"
-assign [class="discord"] "5"
 assign [class="Spotify"] "6"
 
 ### Output configuration
@@ -68,11 +66,13 @@ assign [class="Spotify"] "6"
 # This is commented in Debian, because the Sway wallpaper files are in a separate
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
-output "*" bg /usr/share/backgrounds/downloaded/galaxy_purple_1440p.png fill
+output "*" bg /usr/share/backgrounds/ubuntu-wallpaper-d.png fill
 #
 # Example configuration:
 
-output eDP-1 resolution 1920x1080@60.015Hz position 0,0
+output eDP-1 resolution 1920x1200@60.002Hz position 0,0
+output DP-10 resolution 2560x1440@59.951Hz
+output DP-9 resolution 2560x1440@59.951Hz
 output HDMI-A-1 resolution 1920x1080 position 0,-1080
 
 #
@@ -174,8 +174,8 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
     bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
+    #bindsym $mod+5 workspace number 5
+    #bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
     # bindsym $mod+8 workspace number 8
     # bindsym $mod+9 workspace number 9
@@ -185,14 +185,16 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     bindsym $mod+Shift+2 move container to workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3
     bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
+    # bindsym $mod+Shift+5 move container to workspace number 5
+    # bindsym $mod+Shift+6 move container to workspace number 6
     bindsym $mod+Shift+7 move container to workspace number 7
     # bindsym $mod+Shift+8 move container to workspace number 8
     # bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+	workspace 2 output DP-10
+	workspace 3 output DP-9
     workspace 10 output HDMI-A-1
 #
 # Layout stuff:
