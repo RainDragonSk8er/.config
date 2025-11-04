@@ -22,7 +22,7 @@ set $browser firefox
 # Your preferred communication platforms
 set $communicate teams-for-linux
 # Your preferred email application
-set $email thunderbird
+set $email outlook-for-linux
 # Your preferred note-taking application
 set $notes obsidian
 
@@ -60,7 +60,7 @@ assign [class="Code"] "3"
 assign [class="obsidian"] "4"
 assign [app_id="Zotero"] "4"
 assign [class="teams-for-linux"] "5"
-assign [app_id="thunderbird"] "6"
+assign [class="outlook-for-linux"] "6"
 
 ### Output configuration
 #
@@ -72,10 +72,13 @@ output "*" bg /usr/share/backgrounds/ubuntu-wallpaper-d.png fill
 #
 # Example configuration:
 
-output eDP-1 resolution 1920x1200@60.002Hz position 0,0
-output DP-10 resolution 2560x1440@59.951Hz
-output DP-9 resolution 2560x1440@59.951Hz
-output HDMI-A-1 resolution 1920x1080 position 0,-1080
+output eDP-1 resolution 1920x1200@60.002Hz position 0 0
+# Right Monitor
+output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' resolution 2560x1440@59.951Hz position -2560 -90 
+# Left Monitor
+output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' resolution 2560x1440@59.951Hz position -5120 -90
+# External non-dock monitor
+output HDMI-A-1 resolution 1920x1080 position 0 -1080
 
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -195,8 +198,12 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-	workspace 2 output DP-10
-	workspace 3 output DP-9
+	workspace 1 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
+	workspace 2 output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' 
+	workspace 3 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
+	workspace 4 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
+    workspace 5 output eDP-1
+    workspace 6 output eDP-1
     workspace 10 output HDMI-A-1
 #
 # Layout stuff:
