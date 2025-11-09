@@ -142,6 +142,10 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     # Start the lockscreen (idle)
     bindsym $mod+i exec swaylock -C /home/jho/.config/swaylock/config
 
+    # Run TMUX_Sessionizer scripts
+	bindsym $mod+t+s exec  $HOME/.config/external/TMUX/Scripts/utils/tmux-fuzzel.sh
+
+
 #
 # Moving around:
 #
