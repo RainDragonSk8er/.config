@@ -57,7 +57,7 @@ for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disa
 assign [app_id="Alacritty"] "1"
 assign [app_id="firefox"] "2"
 assign [class="Code"] "3"
-assign [class="obsidian"] "4"
+assign [app_id="obsidian"] "4"
 assign [app_id="Zotero"] "4"
 assign [class="teams-for-linux"] "5"
 assign [class="outlook-for-linux"] "6"
@@ -74,9 +74,9 @@ output "*" bg /usr/share/backgrounds/ubuntu-wallpaper-d.png fill
 
 output eDP-1 resolution 1920x1200@60.002Hz position 0 0
 # Right Monitor
-output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' resolution 2560x1440@59.951Hz position -2560 -90 
+output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' resolution 2560x1440@59.951Hz position 5120 0 
 # Left Monitor
-output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' resolution 2560x1440@59.951Hz position -5120 -90
+output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' resolution 2560x1440@59.951Hz position 2560 90
 # External non-dock monitor
 output HDMI-A-1 resolution 1920x1080 position 0 -1080
 
