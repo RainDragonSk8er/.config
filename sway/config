@@ -4,6 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -28,6 +29,7 @@ set $notes obsidian
 
 
 include /etc/sway/config-vars.d/*
+include ~/.env
 
 input * {
 	xkb_layout "no, us"
@@ -45,19 +47,16 @@ input type:touchpad {
 
 exec wl-paste -t text --watch clipman store --no-persist
 
-# Flameshot
+# Grimshot
 
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+bindsym $mod+Shift+s exec grimshot copy area
 
 # Assign default workspaces for Apps
 
 assign [app_id="Alacritty"] "1"
 assign [app_id="firefox"] "2"
 assign [class="Code"] "3"
-assign [app_id="obsidian"] "4"
+assign [class="obsidian"] "4"
 assign [app_id="Zotero"] "4"
 assign [class="teams-for-linux"] "5"
 assign [class="outlook-for-linux"] "6"
@@ -68,7 +67,7 @@ assign [class="outlook-for-linux"] "6"
 # This is commented in Debian, because the Sway wallpaper files are in a separate
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
-output "*" bg /usr/share/backgrounds/ubuntu-wallpaper-d.png fill
+output "*" bg $WALLPAPER_PATH fill
 #
 # Example configuration:
 
@@ -86,12 +85,9 @@ output HDMI-A-1 resolution 1920x1080 position 0 -1080
 ### Idle configuration
 #
 # Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+
+exec swayidle -w timeout 300 'swaylock -f -c 000000' timeout 360 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep "swaylock -f -c 000000"
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -145,7 +141,7 @@ output HDMI-A-1 resolution 1920x1080 position 0 -1080
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     
     # Start the lockscreen (idle)
-    bindsym $mod+i exec swaylock -C /home/jho/.config/swaylock/config
+    bindsym $mod+i exec swaylock
 
 #
 # Moving around:

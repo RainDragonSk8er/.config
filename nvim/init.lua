@@ -8,6 +8,7 @@ vim.o.relativenumber = true
 
 -- fix tab display length
 vim.o.tabstop = 4 
+vim.o.expandtab = true
 
 -- enable mouse?
 vim.o.mouse = "a"

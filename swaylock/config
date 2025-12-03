@@ -1,40 +1,73 @@
-daemonize
-show-failed-attempts
-clock
-screenshot
-effect-pixelate=40
-effect-vignette=0.5:0.5
-color=6272A4
-font="Inter"
-indicator
+# From https://github.com/catppuccin/swaylock/blob/main/themes/mocha.conf
 
+# Operational settings
+daemonize
+ignore-empty-password
+show-failed-attempts
+indicator-idle-visible
+indicator-caps-lock
+
+# Image background
+image=/usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png
+
+# Font
+font=Canterbury
+font-size=55
+
+# Backspace highlight
+bs-hl-color=000000F0
+
+# Screen colour (overridden by image)
 color=1e1e2e
-bs-hl-color=f5e0dc
-caps-lock-bs-hl-color=f5e0dc
-caps-lock-key-hl-color=a6e3a1
-inside-color=00000000
-inside-clear-color=00000000
-inside-caps-lock-color=00000000
-inside-ver-color=00000000
-inside-wrong-color=00000000
-key-hl-color=a6e3a1
+
+# Text Box
 layout-bg-color=00000000
-layout-border-color=00000000
-layout-text-color=cdd6f4
-line-color=00000000
-line-clear-color=00000000
-line-caps-lock-color=00000000
-line-ver-color=00000000
-line-wrong-color=00000000
-ring-color=b4befe
-ring-clear-color=f5e0dc
-ring-caps-lock-color=fab387
-ring-ver-color=89b4fa
-ring-wrong-color=eba0ac
-separator-color=00000000
-text-color=cdd6f4
-text-clear-color=f5e0dc
-text-caps-lock-color=fab387
-text-ver-color=89b4fa
-text-wrong-color=eba0ac
+layout-border-color=644713F0
+layout-text-color=966a1cF0
+
+# CAPS LOCK settings
+caps-lock-bs-hl-color=163b37F0
+caps-lock-key-hl-color=4ac6b7F0
+
+inside-caps-lock-color=2c776e20
+line-caps-lock-color=163b3790
+ring-caps-lock-color=3b9e9240
+text-caps-lock-color=151515f0
+
+# Indicator Settings (lock indicator)
+
+## Sizeing
+indicator-radius=144
+indicator-thickness=55
+
+## Line between highlighters
+separator-color=56565690
+
+## Key Press
+key-hl-color=966a1cF0
+
+## Base Colors
+inside-color=56565610
+line-color=56565690
+ring-color=6c6c6c90
+text-color=151515f0
+
+## Clear: when backspaced back to no input
+inside-clear-color=20263320
+line-clear-color=181c2690
+ring-clear-color=2f384c90
+text-clear-color=151515f0
+
+## Verifying
+inside-ver-color=3c263720
+line-ver-color=2d1c2990
+ring-ver-color=4b304590
+text-ver-color=151515f0
+
+## Wrong
+inside-wrong-color=73051c10
+line-wrong-color=4c041390
+ring-wrong-color=bf092f90
+text-wrong-color=151515f0
+
 
