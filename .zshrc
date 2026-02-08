@@ -43,7 +43,7 @@ fi
 
 # PATH update for custom scripts
 export PATH="${PATH}:/opt/nvim"
-export PATH="${PATH}:~/.config/bin"
+export PATH="${PATH}:${HOME}/.config/bin"
 
 
 # >>> mamba initialize >>>
@@ -58,3 +58,10 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# bun completions
+[ -s "/home/jhol/.bun/_bun" ] && source "/home/jhol/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

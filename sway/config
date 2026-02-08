@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Enable screen sharing
+include /etc/sway/config.d/*
 
 ### Variables
 #
@@ -26,7 +28,9 @@ set $communicate teams-for-linux
 set $email outlook-for-linux
 # Your preferred note-taking application
 set $notes obsidian
-
+# Monitors
+set $main_monitor 'Philips Consumer Electronics Company PHL 275S1 UK02213083288'
+set $side_monitor 'Philips Consumer Electronics Company PHL 275S1 UK02143031375'
 
 include /etc/sway/config-vars.d/*
 include ~/.env
@@ -73,9 +77,9 @@ output "*" bg $WALLPAPER_PATH fill
 
 output eDP-1 resolution 1920x1200@60.002Hz position 0 0
 # Right Monitor
-output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' resolution 2560x1440@59.951Hz position 5120 0 
+output $main_monitor resolution 2560x1440@59.951Hz position 2560 0 
 # Left Monitor
-output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' resolution 2560x1440@59.951Hz position 2560 90
+output $side_monitor resolution 2560x1440@59.951Hz position 5120 0
 # External non-dock monitor
 output HDMI-A-1 resolution 1920x1080 position 0 -1080
 
@@ -177,7 +181,7 @@ exec swayidle -w timeout 300 'swaylock -f -c 000000' timeout 360 'swaymsg "outpu
     bindsym $mod+4 workspace number 4
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
-    # bindsym $mod+7 workspace number 7
+    bindsym $mod+7 workspace number 7
     # bindsym $mod+8 workspace number 8
     # bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
@@ -188,18 +192,19 @@ exec swayidle -w timeout 300 'swaylock -f -c 000000' timeout 360 'swaymsg "outpu
     bindsym $mod+Shift+4 move container to workspace number 4
     bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
-    # bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+7 move container to workspace number 7
     # bindsym $mod+Shift+8 move container to workspace number 8
     # bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-	workspace 1 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
-	workspace 2 output 'Philips Consumer Electronics Company PHL 275S1 UK02143030449' 
-	workspace 3 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
-	workspace 4 output 'Philips Consumer Electronics Company PHL 275S1 UHB2513005074' 
+	workspace 1 output $main_monitor 
+	workspace 2 output $side_monitor 
+	workspace 3 output $main_monitor 
+	workspace 4 output $main_monitor 
     workspace 5 output eDP-1
     workspace 6 output eDP-1
+    workspace 7 output $side_monitor
     workspace 10 output HDMI-A-1
 #
 # Layout stuff:
