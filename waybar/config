@@ -18,6 +18,7 @@
 				"cpu",
 				"memory",
 				"battery",
+				"custom/screencast",
 				"tray",
 				"clock"
 		],
@@ -51,6 +52,13 @@
 						"(.*) Firefox": " Firefox",
 						"Terminal (.*)": "  $1"
 				}
+		},
+		"custom/screencast": {
+				"exec": "/home/jhol/.config/waybar/scripts/screencast-indicator.sh",
+				"return-type": "json",
+				"format": "{}",
+				"interval": 2,
+				"tooltip": true
 		},
 		"backlight": {
 				"device": "intel_backlight",
