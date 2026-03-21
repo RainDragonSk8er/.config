@@ -45,12 +45,17 @@ input type:touchpad {
 
 exec wl-paste -t text --watch clipman store --no-persist
 
-# Flameshot
-
+# Screen sharing
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
+# Idle configuration
+exec swayidle -w \
+    timeout 300 'swaylock -f -C /home/jho/.config/swaylock/config' \
+    timeout 360 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -C /home/jho/.config/swaylock/config'
 
 # Assign default workspaces for Apps
 
@@ -125,6 +130,9 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
 
     # Start your application launcher
     bindsym $mod+d exec $menu
+
+    # Change power profile
+	bindsym F5 exec asusctl profile --next
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -270,8 +278,9 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Screenshots with grimshot
+    bindsym Print exec grimshot copy screen
+    bindsym $mod+Shift+s exec grimshot copy area
 
 #
 # Status Bar:
