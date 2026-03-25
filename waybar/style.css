@@ -23,7 +23,7 @@ window#waybar.empty {
 .format-icons {
     font-size: 20px;
     font-weight: bold;
-    font-family: "Font Awesome 7";
+    font-family: "Font Awesome 5 Free";
 }
 
 #workspaces button {

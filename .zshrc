@@ -39,5 +39,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PATH update for custom scripts
-export PATH="${PATH}:~/.config/bin"
+export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.config/bin"
 

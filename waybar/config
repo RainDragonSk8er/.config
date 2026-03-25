@@ -20,6 +20,7 @@
 				"cpu",
 				"memory",
 				"battery",
+				"custom/screencast",
 				"tray",
 				"clock#date"
 		],
@@ -138,7 +139,14 @@
 				"exec": "bash $HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
 				"exec-if": "pgrep spotify"
 		},
-		"custom/powerprofiles": {
+		"custom/screencast": {
+			"exec": "/home/jho/.config/waybar/scripts/screencast-indicator.sh",
+			"return-type": "json",
+			"format": "{}",
+			"interval": 2,
+			"tooltip": true
+	},
+	"custom/powerprofiles": {
 				"format": "{icon}",
 				"return-type": "json",
 				"format-icons": {
