@@ -1,8 +1,9 @@
 # From https://github.com/catppuccin/swaylock/blob/main/themes/mocha.conf
 
 # Operational settings
+# Leave ignore-empty-password disabled: typing a password unlocks immediately,
+# while pressing Enter on an empty prompt falls through to PAM fingerprint auth.
 daemonize
-ignore-empty-password
 show-failed-attempts
 indicator-idle-visible
 indicator-caps-lock
@@ -69,5 +70,3 @@ inside-wrong-color=73051c10
 line-wrong-color=4c041390
 ring-wrong-color=bf092f90
 text-wrong-color=151515f0
-
-

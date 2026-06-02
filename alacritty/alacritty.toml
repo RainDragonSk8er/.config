@@ -10,7 +10,7 @@ normal = {family = "JetBrainsMono", style="Regular"}
 # Bold, italic ++ are set based on normal
 size = 10
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/tmux"
 args = ["new", "-AD" ,"-s", "main"] # , "neofetch"
 
@@ -22,4 +22,6 @@ foreground = "#bc5090"
 dim_foreground = "#58508d"
 bright_foreground = "#ff6361"
 background = "#00202e"
+
+[terminal]
 
