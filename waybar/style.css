@@ -43,9 +43,16 @@ window#waybar.empty {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #custom-screencast {
     padding: 0 3px;
     margin: 0 2px;
+}
+
+#custom-screencast {
+    color: #e04646;
+    font-family: "Font Awesome 7 Free Solid", "Font Awesome 7 Free", "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    font-weight: 900;
 }
 
 #clock {

@@ -1,0 +1,33 @@
+# Secrets / credentials — never commit
+Signal/
+opera/
+Microsoft/
+Antigravity/
+discord/
+pulse/
+onedrive/refresh_token
+onedrive/items.sqlite3
+onedrive/.sync_list.hash
+
+# Caches, build artifacts, generated/runtime state — not config
+yay/
+obsidian/
+go/
+unity3d/
+dconf/
+session/
+QtProject/
+QtProject.conf
+baloofileinformationrc
+kiorc
+kminesrc
+dolphinrc
+qBittorrent/
+Loop_hero/
+
+# App data with personal content — revisit individually if wanted
+xpad/
+FreeCAD/
+GIMP/
+spotify/
+obs-studio/

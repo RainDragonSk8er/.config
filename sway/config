@@ -28,6 +28,7 @@ set $notes obsidian
 
 
 include /etc/sway/config-vars.d/*
+include ~/.env
 
 input * {
 	xkb_layout "no, us"
@@ -52,8 +53,8 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 
 # Idle configuration
 exec swayidle -w \
-    timeout 300 'swaylock -f -C /home/jho/.config/swaylock/config' \
-    timeout 360 'swaymsg "output * power off"' \
+    timeout 5400 'swaylock -f -C /home/jho/.config/swaylock/config' \
+    timeout 5400 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -C /home/jho/.config/swaylock/config'
 
@@ -73,7 +74,7 @@ assign [class="Spotify"] "6"
 # This is commented in Debian, because the Sway wallpaper files are in a separate
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
-output "*" bg /usr/share/backgrounds/downloaded/galaxy_purple_1440p.png fill
+output "*" bg $WALLPAPER_PATH fill
 #
 # Example configuration:
 
@@ -125,6 +126,9 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     # Start a note-taking application
     bindsym $mod+n exec $notes
 
+    # Start (or attach to) the work VPN tmux session
+    bindsym $mod+Shift+v exec tmux new-session -A -s NILU-FVPN /home/jho/.config/bin/vpn_connect.sh
+
     # Kill focused window
     bindsym $mod+Backspace kill
 
@@ -149,10 +153,6 @@ output HDMI-A-1 resolution 1920x1080 position 0,-1080
     
     # Start the lockscreen (idle)
     bindsym $mod+i exec swaylock -C /home/jho/.config/swaylock/config
-
-    # Run TMUX_Sessionizer scripts
-	bindsym $mod+t+s exec  $HOME/.config/external/TMUX/Scripts/utils/tmux-fuzzel.sh
-
 
 #
 # Moving around:
